@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://fullcalendar.io/js/fullcalendar-3.7.0/demos/gcal.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="./gcal_files/fullcalendar.min.css" rel="stylesheet">
+<link href="./gcal_files/fullcalendar.print.min.css" rel="stylesheet" media="print">
+<script src="./gcal_files/moment.min.js.download"></script>
+<script src="./gcal_files/jquery.min.js.download"></script>
+<script src="./gcal_files/fullcalendar.min.js.download"></script>
+<script src="./gcal_files/gcal.min.js.download"></script>
+<script>
+
+	$(document).ready(function() {
+	
+		$('#calendar').fullCalendar({
+
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,listYear'
+			},
+
+			displayEventTime: false, // don't show the time column in list view
+
+			// THIS KEY WON'T WORK IN PRODUCTION!!!
+			// To make your own Google API key, follow the directions here:
+			// http://fullcalendar.io/docs/google_calendar/
+			// googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
+			googleCalendarApiKey: 'AIzaSyDZHJsuAvb5eBIrc3ShksU_r3lZ8sFctio',
+
+			// US Holidays
+			events: 'aday.3ddesign@gmail.com',
+			
+			eventClick: function(event) {
+				// opens events in a popup window
+				window.open(event.url, 'gcalevent', 'width=700,height=600');
+				return false;
+			},
+			
+			loading: function(bool) {
+				$('#loading').toggle(bool);
+			}
+			
+		});
+		
+	});
+
+</script>
+<style>
+
+	body {
+		margin: 40px 10px;
+		padding: 0;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		font-size: 14px;
+	}
+		
+	#loading {
+		display: none;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+
+	#calendar {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+</style>
+</head>
+<body>
+
+	<div id="loading" style="display: none;">loading...</div>
+	<div id="calendar"></div>
+
+</body></html>

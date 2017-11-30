@@ -1,6 +1,7 @@
 <?php
 // doc : https://developers.google.com/google-apps/calendar/quickstart/php
 // https://developers.google.com/api-client-library/php/auth/web-app
+// https://developers.google.com/google-apps/calendar/v3/reference/events
 
 require_once __DIR__ . '/vendor/autoload.php';
 
